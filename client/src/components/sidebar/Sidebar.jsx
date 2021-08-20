@@ -1,5 +1,17 @@
 import "./sidebar.css";
-import { Bookmark, Chat, Event, Group, HelpOutline, PlayCircleFilled, RssFeed, School, WorkOutline } from "@material-ui/icons";
+import {
+  Bookmark,
+  Chat,
+  Event,
+  Group,
+  HelpOutline,
+  PlayCircleFilled,
+  RssFeed,
+  School,
+  WorkOutline
+} from "@material-ui/icons";
+import CloseFriend from "../closeFriend/CloseFriend";
+import { Users } from "../../dummyData";
 
 export default function Sidebar() {
   return (
@@ -43,26 +55,12 @@ export default function Sidebar() {
             <span className="sidebarListItemText">Courses</span>
           </li>
         </ul>
-        <button className='sidebarButton'>Show More</button>
-        <hr className='sidebarHr'/>
+        <button className="sidebarButton">Show More</button>
+        <hr className="sidebarHr" />
         <ul className="sidebarFriendList">
-          <li className="sidebarFriend">
-            <img src="/assets/person/3.jpeg" alt="" className="sidebarFriendImg" />
-            <span className="sidebarFriendName">Jane Doe</span>
-          </li>
-          <li className="sidebarFriend">
-            <img src="/assets/person/3.jpeg" alt="" className="sidebarFriendImg" />
-            <span className="sidebarFriendName">Jane Doe</span>
-          </li>
-          <li className="sidebarFriend">
-            <img src="/assets/person/3.jpeg" alt="" className="sidebarFriendImg" />
-            <span className="sidebarFriendName">Jane Doe</span>
-          </li>
-          <li className="sidebarFriend">
-            <img src="/assets/person/3.jpeg" alt="" className="sidebarFriendImg" />
-            <span className="sidebarFriendName">Jane Doe</span>
-          </li>
-
+          {Users.map((user) => (
+            <CloseFriend key={user.id} user={user} />
+          ))}
         </ul>
       </div>
     </div>
