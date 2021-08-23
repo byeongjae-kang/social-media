@@ -12,13 +12,13 @@ export default function App() {
         <Route exact path="/">
           <Home />
         </Route>
-        <Route path="/login">
+        <Route exact path="/login">
           <Login />
         </Route>
-        <Route path="/register">
+        <Route exact path="/register">
           <Register />
         </Route>
-        <Route path="/profile/:username">
+        <Route exact path="/profile/:username">
           <Profile />
         </Route>
       </Switch>
