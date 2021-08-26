@@ -20,7 +20,7 @@ export default function Rightbar({ user }) {
         console.log(err);
       }
     };
-    getFriends();
+    user && getFriends();
   }, [user]);
 
   const HomeRightBar = () => {
@@ -53,11 +53,11 @@ export default function Rightbar({ user }) {
         <div className="rightbarInfo">
           <div className="rightbarInfoItem">
             <span className="rightbarInfoKey">City:</span>
-            <span className="rightbarInfoValue">{user.city}</span>
+            <span className="rightbarInfoValue">{user.city || "-"}</span>
           </div>
           <div className="rightbarInfoItem">
             <span className="rightbarInfoKey">From:</span>
-            <span className="rightbarInfoValue">{user.from}</span>
+            <span className="rightbarInfoValue">{user.from || "-"}</span>
           </div>
           <div className="rightbarInfoItem">
             <span className="rightbarInfoKey">Relationship:</span>
